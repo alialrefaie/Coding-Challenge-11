@@ -10,3 +10,14 @@ const svg = d3.select("svg").attr("width", width).attr("height", height);
 const xScale = d3.scaleLinear()
     .domain([0, d3.max(data)])
     .range([0, width]);
+
+// Render bars
+svg.selectAll(".bar")
+    .data(data)
+    .enter().append("rect")
+    .attr("x", 0)
+    .attr("y", (d, i) => i * 21)
+    .attr("width", d => xScale(d))
+    .attr("height", 20)
+    .attr("fill", "steelblue");
+    
