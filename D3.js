@@ -29,3 +29,9 @@ svg.selectAll(".text")
     .attr("y", (d, i) => i * 21 + 10)
     .attr ("dy", ".35em")
     .text(d => d);
+
+// Add transitions
+svg.selectAll(".bar")
+    .transition()
+    .duration(750)
+    .attr("width", d => xScale(d));
