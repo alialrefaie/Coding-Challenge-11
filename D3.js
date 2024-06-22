@@ -20,4 +20,12 @@ svg.selectAll(".bar")
     .attr("width", d => xScale(d))
     .attr("height", 20)
     .attr("fill", "steelblue");
-    
+
+// Text labels
+svg.selectAll(".text")
+    .data(data)
+    .enter().append("text")
+    .attr("x", d => xScale(d) + 3)
+    .attr("y", (d, i) => i * 21 + 10)
+    .attr ("dy", ".35em")
+    .text(d => d);
